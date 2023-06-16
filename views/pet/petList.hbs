@@ -1,0 +1,29 @@
+<h2>Available pets</h2>
+<div class="card-grid">
+  {{#each pets}}
+      <div class="card">
+        <div class="card-image">
+          <a href="/pet/{{_id}}/detail">
+            <figure class="image is-4by3">
+                <img src="{{picture}}" alt="Placeholder image" width="250">
+            </figure>
+            </a>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4" style="color:aliceblue">{{name}}</p>
+            </div>
+            <div class="media-content">
+              <form class="delete-form" action="/pet/{{_id}}/delete" method="GET">
+                <button  class="delete-button" type="submit">Delete</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+  {{/each}}
+
+</div>
