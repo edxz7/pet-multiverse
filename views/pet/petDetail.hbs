@@ -1,24 +1,76 @@
-{{#with pet}}
-    <div class="card">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img src="{{picture}}" alt="pet picture" width="500">
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4">{{name}}</p>
-        </div>
-        <div class="media-content">
-          <p class="title is-4">{{price}}</p>
-        </div>
-
+{{!-- {{#with pet}} --}}
+    <div class="container">
+      <div class="container-image">
+        <figure class="image is-4by3">
+          <img src="{{pet.picture}}" alt="pet picture" width="500">
+        </figure>
       </div>
+      <form class="update-form" action="/pet/{{pet._id}}/update" method="POST">
+        <div class="container-content">
 
-      <div class="content">
-        {{description}}
-        <time datetime="2023-1-1">11:09 PM - 1 Jan 2023</time>
-      </div>
+          {{#if isUpdate}}
+            <label class="form-label" for="name">Name: {{isUpdate.isUpdate}} </label>
+            <div>
+                <input 
+                    class="form-field" 
+                    id="name" 
+                    placeholder="Pet Name" 
+                    type="text" 
+                    required="required"
+                    name="name"
+                    value="{{pet.name}}"
+                />
+            </div>
+          {{else}}
+            <div class="container-media-content">
+              <p class="title is-4">{{pet.name}}</p>
+            </div>
+          {{/if}}
+
+
+          {{#if isUpdate}}
+            <label class="form-label" for="name">Price: </label>
+            <div>
+                <input 
+                    class="form-field" 
+                    id="price" 
+                    placeholder="price" 
+                    type="text" 
+                    required="required"
+                    name="price"
+                    value="{{pet.price}}"
+                />
+            </div>
+          {{else}}
+            <div class="container-media-content">
+              <p class="field">price: ${{pet.price}}</p>
+            </div>
+          {{/if}}
+
+          {{#if isUpdate}}
+            <select class="form-field" id="gender" name="gender">
+              <option value="unknown">Unknown</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          {{else}}
+            <div class="container-media-content">
+              <p class="field">gender: {{pet.gender}}</p>
+            </div>
+          {{/if}}
+            <div class="container-media-content">
+              {{pet.description}}
+            </div>
+
+          {{#if isUpdate}}
+            <div class="buttons">
+              <button  class="update-button" type="submit">Update</button>
+              <a class="update-button" href="/pet/{{pet._id}}/detail">Cancel</a>
+            </div>
+          {{else}}
+            <a class="update-button" href="/pet/{{pet._id}}/update">Edit</a>
+          {{/if}}
+        </div>
+      </form>
     </div>
-{{/with}}
+{{!-- {{/with}} --}}

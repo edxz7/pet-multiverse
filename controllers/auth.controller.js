@@ -11,7 +11,7 @@ const getSignup = (req, res) => {
 
 // POST
 const postSignup = async (req, res) => {
-
+    
 }
 
 
@@ -33,6 +33,10 @@ const getProfile = async (req, res, next) => {
  * Login
  */
 
+const getLogin = (req, res) => {
+    res.render('auth/login')
+}
+
 
 /**
  * Logout
@@ -42,5 +46,6 @@ const getProfile = async (req, res, next) => {
 module.exports = {
     getSignup,
     postSignup,
-    getProfile
+    getProfile,
+    getLogin
 }

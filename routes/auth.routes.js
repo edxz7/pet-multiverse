@@ -3,7 +3,8 @@ const userRouter = express.Router();
 const { 
     getSignup,
     postSignup,
-    profile
+    getProfile,
+    getLogin
 } = require('../controllers/auth.controller')
 
 /**
@@ -21,6 +22,9 @@ userRouter.get('/profile/:userId', getProfile)
 /**
  * Login
  */
+
+userRouter.get('/login', getLogin)
+
 
 
 /**

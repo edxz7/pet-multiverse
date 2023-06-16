@@ -68,6 +68,15 @@ header {
   background-color: #ff5a3c;
 }
 
+.title-nav {
+  padding-left: 150px;
+}
+
+
+.navigation {
+  display: flex;
+}
+
 .main {
   padding: 20px;
 }
