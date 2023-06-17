@@ -14,7 +14,8 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
+      match: [/^\S+@\S+\.\S+$/, 'El email no tiene el formato esperado: algo@algo.com']
     },
     password: {
       type: String,

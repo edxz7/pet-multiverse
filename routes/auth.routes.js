@@ -4,7 +4,8 @@ const {
     getSignup,
     postSignup,
     getProfile,
-    getLogin
+    getLogin,
+    postLogin
 } = require('../controllers/auth.controller')
 
 /**
@@ -17,14 +18,14 @@ userRouter.post('/signup', postSignup)
 /**
  * Profile
  */
-userRouter.get('/profile/:userId', getProfile)
+userRouter.get('/profile', getProfile)
 
 /**
  * Login
  */
 
 userRouter.get('/login', getLogin)
-
+userRouter.post('/login', postLogin )
 
 
 /**

@@ -16,7 +16,6 @@ const favicon = require("serve-favicon");
 // ℹ️ global package used to `normalize` paths amongst different operating systems
 // https://www.npmjs.com/package/path
 const path = require("path");
-
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
