@@ -64,14 +64,14 @@
 
           {{#if isAdmin}}
 
-          {{#if isUpdate}}
-            <div class="buttons">
-              <button  class="update-button" type="submit">Update</button>
-              <a class="update-button" href="/pet/{{pet._id}}/detail">Cancel</a>
-            </div>
-          {{else}}
-            <a class="update-button" href="/pet/{{pet._id}}/update">Edit</a>
-          {{/if}}
+            {{#if isUpdate}}
+              <div class="buttons">
+                <button  class="update-button" type="submit">Update</button>
+                <a class="update-button" href="/pet/{{pet._id}}/detail">Cancel</a>
+              </div>
+            {{else}}
+              <a class="update-button" href="/pet/{{pet._id}}/update">Edit</a>
+            {{/if}}
 
           {{/if}}
         </div>

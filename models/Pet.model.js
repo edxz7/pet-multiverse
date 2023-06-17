@@ -10,6 +10,10 @@ const petSchema = new Schema({
         enum: ['male', 'female', 'unknown'],
         default: 'unknown'
     },
+    price: {
+        type: Number,
+        default: 100000
+    },
     kind: String,
     description: {
         type: String,
