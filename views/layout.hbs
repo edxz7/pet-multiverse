@@ -21,10 +21,13 @@
             <p class="header-punchline">Where Imagination Meets Reality</p>
          </section>
          <section class="navigation">
-            <a href="/pet/pet-form" class="navbar-button">Request Pet</a>
-            <a href="/auth/logout" class="navbar-button">Logout</a>
-            <a href="/auth/signup" class="navbar-button">Signup</a>
-            <a href="/auth/login" class="navbar-button">Login</a>
+            {{#if isLoggedIn}}
+               <a href="/pet/pet-form" class="navbar-button">Request Pet</a>
+               <a href="/auth/logout" class="navbar-button">Logout</a>
+            {{else}}
+               <a href="/auth/signup" class="navbar-button">Signup</a>
+               <a href="/auth/login" class="navbar-button">Login</a>
+            {{/if}}
          </section>
       </header>
       

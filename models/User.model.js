@@ -17,6 +17,11 @@ const userSchema = new Schema(
       trim: true,
       match: [/^\S+@\S+\.\S+$/, 'El email no tiene el formato esperado: algo@algo.com']
     },
+    role: {
+      type: String,
+      enum: ['User', 'Admin'],
+      default: 'User'
+    },
     password: {
       type: String,
       required: true

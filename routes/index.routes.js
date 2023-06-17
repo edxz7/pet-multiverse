@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
+const { isLoggedIn } = require('../middlewares/guard-auth.middleware');
 /* GET home page */
-router.get("/", (req, res, next) => {
+router.get("/", isLoggedIn, (req, res, next) => {
   res.render("index");
 });
 

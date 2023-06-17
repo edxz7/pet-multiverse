@@ -22,13 +22,13 @@ module.exports = app => {
   app.use(
     session({
       secret: process.env.SESSION_SECRET,
-      resave: true,       //don't save session if unmodified
+      resave: false,       //don't save session if unmodified
       saveUninitialized: false, // don't create session until something stored
       cookie: {
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
         secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
-        maxAge: 600000
+        maxAge: 3000000
       }, // ADDED code below !!!
       store: MongoStore.create({
         mongoUrl: MONGO_URI,

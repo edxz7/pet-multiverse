@@ -14,11 +14,17 @@
             <div class="media-content">
               <p class="title is-4" style="color:aliceblue">{{name}}</p>
             </div>
+
+
+          {{#if isAdmin}}
+
             <div class="media-content">
               <form class="delete-form" action="/pet/{{_id}}/delete" method="GET">
                 <button  class="delete-button" type="submit">Delete</button>
               </form>
             </div>
+
+          {{/if}}
 
           </div>
         </div>
