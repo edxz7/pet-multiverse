@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <h2>Describe you awesome pet, it could be a dragon, or the same Yog-Sothoth</h2>
+    <section class="form-section">
+        <form action="/pet/create" method="POST">
+            <label class="form-label" for="name">Name: </label>
+            <div>
+                <input 
+                    class="form-field" 
+                    id="name" 
+                    placeholder="Pet Name" 
+                    type="text" 
+                    required="required"
+                    name="name"
+                />
+            </div>
+            
+            <label class="form-label" for="gender">Gender: </label>
+            <div>
+                <select class="form-field" id="gender" name="gender">
+                    <option value="unknown">Unknown</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+
+            <label class="form-label" for="kind">Kind: </label>
+            <div>
+                <input
+                    class="form-field" 
+                    id="kind" 
+                    placeholder="kind" 
+                    type="text"
+                    name="kind"
+                />
+            </div>
+
+
+            <label class="form-label" for="description">Description: </label>
+            <div>
+                <textarea 
+                    class="form-field" 
+                    id="description" 
+                    placeholder="Pet Name" 
+                    type="text" 
+                    required="required"
+                    name="description"
+                ></textarea>
+            </div>
+
+
+
+            <div>
+                <button class="pet-form-button" type="submit">Request your dream pet</button>
+            </div>
+        </form>
+    </section>
+</div>
