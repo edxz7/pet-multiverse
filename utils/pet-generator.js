@@ -10,7 +10,7 @@ const openai = new OpenAIApi(configuration);
 
 const petGenerator = async (description) => {
     const response = await openai.createImage({
-        prompt: `${description}, digital art, photo`,
+        prompt: `${description}, digital art`,
         n: 3,
         size: "1024x1024",
     });
@@ -19,5 +19,4 @@ const petGenerator = async (description) => {
     return imageUrl;
 }
 
-
-petGenerator('Feli is a cat that usually flies out to space as an astronaut')
+module.exports = petGenerator;
